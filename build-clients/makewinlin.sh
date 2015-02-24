@@ -134,6 +134,9 @@ function buildLinuxDependencies() {
 #================================================================================
 
 function buildWindowsClient() {
+    echo $CUSTOMIZE
+    CUSTOMIZE=1
+    echo $CUSTOMIZE
     if [ ${LINUX_ONLY} -eq 0 ] ; then
         mkdir -p windows/mirall-build
         cd windows/mirall-build
