@@ -190,7 +190,10 @@ function buildWindowsClient() {
 
 function buildLinuxClient() {
     if [ ${WINDOWS_ONLY} -eq 0 ] ; then
-
+    echo "CUSTOMIZE: $CUSTOMIZE"
+    CUSTOMIZE=1
+    echo "CUSTOMIZE: $CUSTOMIZE"
+    read
         #
         # When compiling for Linux the executable should be called 'owncloud'
         # So OWNCLOUD.cmake is overwritten by another version if CUSTOMIZE=1
