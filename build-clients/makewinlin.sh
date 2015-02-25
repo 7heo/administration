@@ -135,6 +135,12 @@ function buildLinuxDependencies() {
 
 function buildWindowsClient() {
     if [ ${LINUX_ONLY} -eq 0 ] ; then
+    
+        echo "OWNTHEME: $OWNTHEME"
+        OWNTHEME=1
+        echo "OWNTHEME: $OWNTHEME"
+        read
+        
         mkdir -p windows/mirall-build
         cd windows/mirall-build
 
@@ -190,10 +196,6 @@ function buildWindowsClient() {
 
 function buildLinuxClient() {
     if [ ${WINDOWS_ONLY} -eq 0 ] ; then
-    echo "CUSTOMIZE: $CUSTOMIZE"
-    CUSTOMIZE=1
-    echo "CUSTOMIZE: $CUSTOMIZE"
-    read
         #
         # When compiling for Linux the executable should be called 'owncloud'
         # So OWNCLOUD.cmake is overwritten by another version if CUSTOMIZE=1
